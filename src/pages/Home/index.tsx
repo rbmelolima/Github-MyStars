@@ -1,9 +1,17 @@
 import React from 'react';
+import { Wrapper } from './style';
+import Header from '../../components/Header';
+import Search from '../../components/Search';
+import ListCards from '../../components/ListCards';
 
 export default function Home(): JSX.Element {
   return (
     <main>
-      <h1>Hello World</h1>
+      <Wrapper>
+        <Header />
+        <Search />
+        <ListCards />
+      </Wrapper>
     </main>
-  )
+  );
 }
