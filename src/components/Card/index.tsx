@@ -1,67 +1,55 @@
 import React from 'react';
 import { Container, Footer } from './style.js';
-//import { modelStarred } from '../../models/starred.js';
+import { modelStarred } from '../../models/starred.js';
 import { MdVisibility, MdStar } from 'react-icons/md';
 
-/* export default function Card(props: modelStarred): JSX.Element {
-  return (
-    <a href={ props.html_url } title={ props.full_name }>
-      <Container>
+interface IStarredProps {
+  details: modelStarred;
+}
+
+export default function Card(props: IStarredProps): JSX.Element {
+  const { html_url, full_name, name, description, watchers_count, stargazers_count } = props.details;
+
+  function renderAvatar(): JSX.Element {
+    if(props.details.owner !== null) {
+      const { avatar_url, login } = props.details.owner;
+
+      return (
         <div className="img">
-          <img src={ props.owner.avatar_url } alt={ props.owner.login } title={ props.owner.login } />
+          <img src={ avatar_url } alt={ login } title={ login } />
         </div>
+      );
+    }
+
+    else {
+      return <></>;
+    }
+  }
+
+  return (
+    <a href={ html_url } title={ full_name }>
+      <Container>
+        {
+          renderAvatar()
+        }
 
         <div className="content">
-          <h3>{ props.name }</h3>
-          <p> { props.description } </p>
-
-          <div className="status">
-            <div className="info">
-              <MdStar />
-              {
-                props.stargazers_count
-              }
-            </div>
-
-            <div className="info">
-              <MdWatch />
-              {
-                props.watchers_count
-              }
-            </div>
-          </div>
-        </div>
-      </Container>
-    </a>
-  );
-} */
-
-export default function Card(): JSX.Element {
-  return (
-    <a href="https://github.com/axios/axios" title="axios">
-      <Container>
-        <div className="img">
-          <img src="https://avatars1.githubusercontent.com/u/32372333?v=4" alt="axios" title="axios" />
-        </div>
-
-        <div className="content">
-          <h3>axios</h3>
-          <p> Promise based HTTP client for the browser and node.js </p>
+          <h3>{ name }</h3>
+          <p> { description } </p>
 
           <Footer>
             <div className="info">
               <MdStar />
-              <p>75696</p>
+              <p>{ stargazers_count }</p>
             </div>
 
             <div className="info">
               <MdVisibility />
-              <p>75696</p>
+              <p>{ watchers_count }</p>
             </div>
           </Footer>
-
         </div>
       </Container>
     </a>
   );
-}
+} 

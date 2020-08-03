@@ -28,10 +28,8 @@ export const Container = styled.article`
     align-items: center;
   }
 
-  .content p {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; 
+  .content  p {   
+    width: 100%;
     font-weight: 300;
     font-size: 14px;
     line-height: 16px;     
