@@ -16,13 +16,11 @@ export default function Search(): JSX.Element {
     if(user === '' || user === null) {
       return;
     }
-
+    
     const response = await fetch(`https://api.github.com/users/${ user }/starred?per_page=100`);
-    console.log("Response", response)
 
     if(response.ok && setStars !== undefined) {
-      const data: Array<modelStarred> = await response.json();
-      console.log("Response.data", data);
+      const data: Array<modelStarred> = await response.json();     
       setStars(data);
     }
   }
