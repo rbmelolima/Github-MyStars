@@ -4,7 +4,7 @@ Até a data de escrita deste README estou enfrentando problemas ao tentar acessa
 
 Disponibilizo aqui neste repositório o link para acessar esta aplicação. Confira e teste você mesmo se desejar :)
 
-![Página inicial da aplicação](./docs/github-stars#1.png)
+![Página inicial da aplicação](./docs/github-stars%231.png)
 
 ## API
 
