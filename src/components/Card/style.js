@@ -8,8 +8,7 @@ export const Container = styled.article`
   border-radius: 4px;
   margin-bottom: 16px;
   display: flex;
-  align-items: center;
-  gap: 20px;
+  align-items: center;  
   border: 2px solid #FFFFFF;
   transition: 0.4s ease-in-out all;
 
@@ -20,7 +19,8 @@ export const Container = styled.article`
   img {
     width: 50px;
     height: 50px;
-    border-radius: 50px;    
+    border-radius: 50px;
+    margin-right: 16px;    
   } 
 
   .img {
